@@ -3,21 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fconde-p <fconde-p@student.42sp.org.b      +#+  +:+       +#+         #
+#    By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 19:20:11 by fconde-p          #+#    #+#              #
-#    Updated: 2025/07/20 19:20:17 by fconde-p         ###   ########.fr        #
+#    Updated: 2025/07/22 19:16:16 by fconde-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #nome
 NAME = libft.a
-#dir src
-DIR_SRC = srcs
-#dir h
-DIR_H = includes
 
-SRCS = $(wildcard $(DIR_SRC)/*.c)
+SRCS = $(wildcard *.c)
 OBJ = $(SRCS:.c=.o)
 
 CC = gcc
@@ -34,7 +30,7 @@ $(NAME): $(OBJ)
 
 # gera arquivos .o
 %.o: %.c
-	$(CC) $(CFLAGS) -I$(DIR_H) -c $(<) -o $(@)
+	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
 clean:
 	rm -rf $(OBJ)
