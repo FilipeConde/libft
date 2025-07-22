@@ -6,12 +6,12 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 18:52:04 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 19:36:43 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str_is_alpha.c"
-int	ft_str_is_alpha(char *str);
+#include "ft_isalpha.c"
+int	ft_isalpha(char c);
 
 #include "ft_str_is_numeric.c"
 int	ft_str_is_numeric(char *str);

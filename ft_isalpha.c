@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.b      +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 19:14:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/03/27 11:00:41 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 19:35:51 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
+int	ft_isalpha(char c)
 {
-	int	i;
-	int	marker;
-
-	marker = 1;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			i++;
-		}
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			i++;
-		}
-		else
-		{
-			marker = 0;
-			i++;
-		}
-	}
-	return (marker);
+	if (c >= 'a' && c <= 'z')
+		return (1024);
+	else if (c >= 'A' && c <= 'Z')
+		return (1024);
+	else
+		return (0);
 }
+
 /*#include <unistd.h>
 
 int	main(void)
