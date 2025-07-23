@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.b      +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 10:47:36 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/04/02 10:47:39 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/23 20:24:32 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 
 	i = 0;
 	while (((s1[i] != '\0') || (s2[i] != '\0'))
-		&& (unsigned int)i < n)
+		&& (size_t)i < n)
 	{
 		if (s1[i] != s2[i])
 		{
@@ -26,17 +28,3 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
-/*#include <string.h>
-#include <stdio.h>
-
-int	main(int argc, char *argv[])
-{
-	unsigned int	size;
-
-	size = 4;
-	printf("%d", strncmp(argv[1], argv[2], 4));
-	printf("%d", ft_strncmp(argv[1], argv[2], 4));
-	printf("%d", argc);
-	return (0);
-}*/
