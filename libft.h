@@ -6,39 +6,25 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 22:54:47 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/23 19:49:23 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isalpha.c"
-int	ft_isalpha(int c);
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include "ft_isdigit.c"
-int	ft_isdigit(int c);
+# include <stddef.h>
 
-#include "ft_isprint.c"
-int	ft_isprint(int c);
-
-#include "ft_strcmp.c"
-int	ft_strcmp(char *s1, char *s2);
-
-#include "ft_strdup.c"
-char	*ft_strdup(char *src);
-
-#include "ft_strlcat.c"
+int				ft_isalpha(int c);
+int				ft_isdigit(int c);
+int				ft_isprint(int c);
+int				ft_strcmp(char *s1, char *s2);
+char			*ft_strdup(char *src);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-
-#include "ft_strlcpy.c"
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+size_t			ft_strlen(const char *s);
+int				ft_tolower(int c);
+int				ft_strncmp(char *s1, char *s2, unsigned int n);
+int				ft_toupper(int c);
 
-#include "ft_strlen.c"
-int	ft_strlen(char *str);
-
-#include "ft_tolower.c"
-int ft_tolower(int c);
-
-#include "ft_strncmp.c"
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
-
-#include "ft_toupper.c"
-int ft_toupper(int c);
+#endif
