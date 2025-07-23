@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 22:47:38 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 22:54:47 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 #include "ft_strlen.c"
 int	ft_strlen(char *str);
 
-#include "ft_strlowcase.c"
-char	*ft_strlowcase(char *str);
+#include "ft_tolower.c"
+int ft_tolower(int c);
 
 #include "ft_strncmp.c"
 int	ft_strncmp(char *s1, char *s2, unsigned int n);

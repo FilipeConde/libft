@@ -3,45 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.b      +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 19:16:39 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/03/27 11:02:22 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 22:53:56 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] += 32;
-			i++;
-		}
-		else
-		{
-			i++;
-		}
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }
-
-/*#include <unistd.h>
-
-int	main(void)
-{
-	char	str_a[] = "sVr.~D";
-	char	*res = ft_strlowcase(str_a);
-	int	i;
-
-	i = 0;
-	while (res[i])
-	{
-		write(1, &res[i], 1);
-		i++;
-	}
-}*/
