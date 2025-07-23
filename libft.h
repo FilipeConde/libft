@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 22:02:13 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 22:47:38 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ char	*ft_strlowcase(char *str);
 #include "ft_strncmp.c"
 int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
-#include "ft_strupcase.c"
-char	*ft_strupcase(char *str);
+#include "ft_toupper.c"
+int ft_toupper(int c);
