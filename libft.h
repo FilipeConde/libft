@@ -6,15 +6,15 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 19:50:03 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:53:03 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_isalpha.c"
-int	ft_isalpha(char c);
+int	ft_isalpha(int c);
 
 #include "ft_isdigit.c"
-int	ft_isdigit(int arg)
+int	ft_isdigit(int c);
 
 #include "ft_str_is_printable.c"
 int	ft_str_is_printable(char *str);

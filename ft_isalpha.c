@@ -6,11 +6,11 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 19:14:56 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 19:39:25 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 20:51:39 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (1024);
