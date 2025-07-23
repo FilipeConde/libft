@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/22 21:53:03 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:57:50 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 
 #include "ft_str_is_printable.c"
-int	ft_str_is_printable(char *str);
+int	ft_isprint(int c);
 
 #include "ft_strcmp.c"
 int	ft_strcmp(char *s1, char *s2);
