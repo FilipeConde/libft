@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:13:27 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/23 22:44:46 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/24 19:44:56 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = 0;
-	result = (char *) malloc(ft_strlen(s) * sizeof(char));
+	result = (char *) malloc(ft_strlen(s) + 1 * sizeof(char));
 	if (s[0] == '\0')
 	{
 		result[0] = '\0';
@@ -32,18 +32,3 @@ char	*ft_strdup(const char *s)
 	result[i] = '\0';
 	return (result);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char	*src = "\0";
-	char	*new_str;
-	new_str = ft_strdup(src);
-	printf("%s\n", src);
-	printf("%s\n\n", new_str);
-
-	new_str = strdup(src);
-	printf("%s\n", src);
-	printf("%s\n", new_str);
-}*/
