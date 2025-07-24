@@ -3,42 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fconde-p <fconde-p@student.42sp.org.b      +#+  +:+       +#+        */
+/*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 19:17:02 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/03/27 11:02:51 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/23 22:13:56 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	int	i;
+#include "libft.h"
 
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	src_size;
+
+	src_size = ft_strlen(src);
 	i = 0;
-	while ((unsigned int)i < size)
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < (size - 1) && src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return ((unsigned int)i);
+	dst[i] = '\0';
+	return (src_size);
 }
-
-/*#include <unistd.h>
-
-int	main(void)
-{
-	char	src[] = "Fé!";
-	unsigned int	size = 13;
-	int	i = 0;
-	char	dest[13];
-
-	ft_strlcpy(dest, src, size);
-
-	while (dest[i] != '\0')
-	{
-		write(1, &dest[i],1);
-		i++;
-	}
-	return (0);
-}*/
