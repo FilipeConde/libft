@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/24 20:51:35 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:13:14 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int				ft_tolower(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_toupper(int c);
 int				ft_isalnum(int c);
+int				ft_isascii(int c);
 
 #endif
