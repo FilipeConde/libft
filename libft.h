@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/24 22:35:40 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/25 19:03:27 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int				ft_toupper(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 void			ft_bzero(void *s, size_t n);
+void			ft_memset(void *s, int c, size_t n);
 
 #endif
