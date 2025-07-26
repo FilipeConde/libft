@@ -39,8 +39,8 @@ bonus_start: update message
 	make bonus -C $(LIBFT_PATH)
 	@tput setaf 5 && echo [Bonus]
 
-update:
-	@git pull
+#update:
+#	@git pull
 
 message: checkmakefile
 	@tput setaf 3 && echo "If all your tests are OK and the moulinette KO you, please run the tester with valgrind (see README)"
