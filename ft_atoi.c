@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 20:02:19 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/27 16:45:51 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:49:26 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr)
 	{
-		if ((sign == -1) && ft_isdigit(*nptr) == 0)
-			return (0);
-		if (ft_isdigit(*nptr) > 0)  // limmit
+		if (ft_isdigit(*nptr) > 0)
 		{
 			acc = gen_int((char *)nptr, acc);
 			return (acc * sign);
