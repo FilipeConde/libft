@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 17:16:17 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/28 19:58:44 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/28 20:07:21 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		sub_len = len;
 	substr = (char *)malloc((sub_len + 1) * sizeof(char));
+	if (!substr)
+		return (NULL);
 	ft_memcpy(substr, s + start, sub_len);
 	substr[sub_len] = '\0';
 	return (substr);
