@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:26:08 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/30 23:35:26 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/31 18:35:29 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@ static size_t	check_start(char const *src, char const *set)
 
 	i = 0;
 	j = 0;
-	while (src[0 + i] == set[0])
+	// acessa src[0]
+	// se src[0] == set[0] i++
+	// se não  
+	while (src[i] != '\0' && set[j] != '\0')
 	{
-		while (src[i] == set[j])
+		if (src[i] == set[j])
 		{
 			i++;
-			j++;
+			j = 0;
 		}
-		j = 0;
+		else
+			j++;
 	}
 	return (i);
 }
@@ -79,9 +83,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char	str[] = "   xxxtripouille";
+	char	str[] = "  x xx xtripouille";
 	char	*res;
 
-	res = ft_strtrim(str, " x");
+	res = ft_strtrim(str, "t x");
 	printf("RESULTADO: %s\n", res);
 }
