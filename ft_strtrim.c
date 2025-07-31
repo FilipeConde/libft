@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:26:08 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/31 18:35:29 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/07/31 18:55:12 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ static size_t	check_start(char const *src, char const *set)
 
 	i = 0;
 	j = 0;
-	// acessa src[0]
-	// se src[0] == set[0] i++
-	// se não  
 	while (src[i] != '\0' && set[j] != '\0')
 	{
 		if (src[i] == set[j])
@@ -43,19 +40,16 @@ static size_t	check_end(char const *src, char const *set)
 	size_t	set_count;
 
 	src_count = ft_strlen(src) - 1;
-	set_count = ft_strlen(set) - 1;
-	while (src[src_count] == set[set_count])
+	set_count = 0;
+	while (src_count != 0 && set[set_count] != '\0')
 	{
-		while (src[src_count] == set[set_count])
+		if (src[src_count] == set[set_count])
 		{
 			src_count--;
-			if (src_count == 0 || set_count == 0)
-			{
-				break;
-			}
-			set_count--;
-		}		
-		set_count = ft_strlen(set) - 1;
+			set_count = 0;
+		}
+		else
+			set_count++;
 	}
 	return (src_count);
 }
@@ -71,8 +65,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = check_start(s1, set);
 	end = check_end(s1, set);
+	if (start > end)
+		return (NULL);
 	size_s1 = end - start + 1;
-
 	ptr = (char *)ft_calloc((size_s1 + 1), sizeof(char));
 	if (!ptr)
 		return (NULL);
@@ -83,7 +78,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char	str[] = "  x xx xtripouille";
+	char	str[] = "  x xx xtripouillex x  xx x";
 	char	*res;
 
 	res = ft_strtrim(str, "t x");
