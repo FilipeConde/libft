@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/01 20:04:16 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/01 20:26:45 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@ static int	count_elements(char const *s, char c)
 {
 	int	index;
 
-	index = 0;
+	index = 1;
+	if (!*s)
+		return (0);
 	while (*s)
 	{
 		if (*s == c)
 		{
 			index++;
+			while (*s == c)
+				s++;
 		}
-		s++;
+		else
+			s++;
 	}
 	return (index);
 }
@@ -53,11 +58,12 @@ void	ft_split(char const *s, char c)
 
 	last_delim_index = 0;
 	new_delim_index = 0;
+	printf("%d\n\n", count_elements(ft_strtrim(s, " "), ' '));
 	while (*(s + (int)last_delim_index))
 	{
 		new_delim_index = check_delimiter(s + (int)last_delim_index, c);
-		printf("%d\n", last_delim_index);
-		printf("%d\n", new_delim_index);
+		// printf("%d\n", last_delim_index);
+		// printf("%d\n", new_delim_index);
 		//copia do últmo delim até o atual para dentro do ponteiro
 		s++;
 	}
@@ -67,8 +73,7 @@ void	ft_split(char const *s, char c)
 int	main(void)
 {
 	// char	*data[] = {"teste", "abc"};
-	char	s[] = "teste abc 123";
-	printf("%d\n\n", count_elements(s, ' '));
+	char	s[] = "   teste  abc    ";
 	ft_split(s, ' ');
 	// printf("%s\n", data[0]);
 	// printf("%s\n", ft_split(s, ' ')[1]);
