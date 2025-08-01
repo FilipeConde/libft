@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/01 20:26:45 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/01 20:44:45 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,30 +50,35 @@ static unsigned int	check_delimiter(char const *s, char c)
 	return (index);
 }
 
-void	ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	// char	**splited_s;
-	unsigned int	last_delim_index;
-	unsigned int	new_delim_index;
+	char			**splited_s;
+	unsigned int	last_delim_i;
+	unsigned int	new_delim_i;
+	int				i;
 
-	last_delim_index = 0;
-	new_delim_index = 0;
-	printf("%d\n\n", count_elements(ft_strtrim(s, " "), ' '));
-	while (*(s + (int)last_delim_index))
+	splited_s = malloc((count_elements(s, c) + 1) * sizeof(char *));
+	if (!**splited_s)
+		return (NULL);
+	i = 0;
+	last_delim_i = 0;
+	new_delim_i = 0;
+	while (*(s + (int)last_delim_i))
 	{
-		new_delim_index = check_delimiter(s + (int)last_delim_index, c);
+		new_delim_i = check_delimiter(s + (int)last_delim_i, c);
 		// printf("%d\n", last_delim_index);
 		// printf("%d\n", new_delim_index);
 		//copia do últmo delim até o atual para dentro do ponteiro
+		ft_strlcpy(splited_s[i], s[last_delim_i], new_delim_i - last_delim_i);
 		s++;
 	}
-	// return (**splited_s);
+	return (splited_s);
 }
 
 int	main(void)
 {
 	// char	*data[] = {"teste", "abc"};
-	char	s[] = "   teste  abc    ";
+	char	s[] = "   teste abc 123  ";
 	ft_split(s, ' ');
 	// printf("%s\n", data[0]);
 	// printf("%s\n", ft_split(s, ' ')[1]);
