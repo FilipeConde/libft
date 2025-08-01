@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/01 20:44:45 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/01 20:55:23 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,22 @@ char	**ft_split(char const *s, char c)
 	unsigned int	last_delim_i;
 	unsigned int	new_delim_i;
 	int				i;
+	char			*ptr_s;
 
+	ptr_s = ft_strtrim(s, &c);
+	// printf("TESTE: %s\n\n", ptr_s);
 	splited_s = malloc((count_elements(s, c) + 1) * sizeof(char *));
 	if (!**splited_s)
 		return (NULL);
 	i = 0;
 	last_delim_i = 0;
 	new_delim_i = 0;
-	while (*(s + (int)last_delim_i))
+
+	while (*ptr_s)
 	{
-		new_delim_i = check_delimiter(s + (int)last_delim_i, c);
-		// printf("%d\n", last_delim_index);
-		// printf("%d\n", new_delim_index);
-		//copia do últmo delim até o atual para dentro do ponteiro
-		ft_strlcpy(splited_s[i], s[last_delim_i], new_delim_i - last_delim_i);
-		s++;
+		// code
 	}
+	
 	return (splited_s);
 }
 
