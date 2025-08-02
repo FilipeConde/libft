@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/01 20:55:23 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/01 21:32:05 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static unsigned int	check_delimiter(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char			**splited_s;
-	unsigned int	last_delim_i;
-	unsigned int	new_delim_i;
+	unsigned int	start_i;
+	unsigned int	end_i;
 	int				i;
 	char			*ptr_s;
 
@@ -64,12 +64,17 @@ char	**ft_split(char const *s, char c)
 	if (!**splited_s)
 		return (NULL);
 	i = 0;
-	last_delim_i = 0;
-	new_delim_i = 0;
+	start_i = 0;
+	end_i = 0;
 
-	while (*ptr_s)
+	while (ptr_s[i] != '\0')
 	{
-		// code
+		if (ptr_s[i] == c)
+		{
+			// *splited_s = malloc((i - last_delim_i) * sizeof(char));
+			*splited_s = ft_substr(ptr_s[start_i], 0, i - start_i);
+			start_i = i;
+		}
 	}
 	
 	return (splited_s);
@@ -78,7 +83,7 @@ char	**ft_split(char const *s, char c)
 int	main(void)
 {
 	// char	*data[] = {"teste", "abc"};
-	char	s[] = "   teste abc 123  ";
+	char	s[] = "   teste   abc 123  ";
 	ft_split(s, ' ');
 	// printf("%s\n", data[0]);
 	// printf("%s\n", ft_split(s, ' ')[1]);
