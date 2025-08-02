@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/02 16:28:01 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/02 18:54:33 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,47 +39,69 @@ char	**ft_split(char const *s, char c)
 {
 	char			**splited_s;
 	unsigned int	start_i;
-	int				i;
+	size_t			i;
 	int				j;
 	char			*ptr_s;
 
 	ptr_s = ft_strtrim(s, &c);
 	splited_s = malloc((count_elements(ptr_s, c) + 1) * sizeof(char *));
-	if (!splited_s)
-		return (NULL);
 	i = 0;
 	j = 0;
 	start_i = 0;
-
-	while (ptr_s[i] != '\0')
+	if (!splited_s)
+	{
+		free(splited_s);
+		return (NULL);
+	}
+	
+	while (i < ft_strlen(ptr_s))
 	{
 		if (ptr_s[i] == c)
 		{
 			splited_s[j] = ft_substr(ptr_s, start_i, i - start_i);
 			if (!splited_s[j])
-				printf("ERRO");
+			{
+				while (j >= 0)
+				{
+					free(splited_s[j]);
+					j--;
+				}
+				return (NULL);
+			}
 			while (ptr_s[i] == c)
 				i++;
 			start_i = i;
 			j++;
 		}
-		else
-			i++;
+		i++;
+		if (ptr_s[i] == '\0')
+		{
+			splited_s[j] = ft_substr(ptr_s, start_i, i - start_i);
+			if (!splited_s[j])
+			{
+				while (j >= 0)
+				{
+					free(splited_s[j]);
+					j--;
+				}
+				return (NULL);
+			}
+		}
 	}
 	
 	return (splited_s);
 }
 
-int	main(void)
-{
-	char	s[] = "   teste   abc 123  ";
-	char	**result;
+// int	main(void)
+// {
+// 	char	s[] = "-----teste--abc--123---";
+// 	char	**result;
 
-	result = ft_split(s, ' ');
-	printf("RESULT: %s\n\n", result[2]);
-	while (*result)
-	{
-		printf("RESULT: %s\n\n", *result);
-		result++;
-	}
-}
+// 	result = ft_split(s, '-');
+// 	// printf("RESULT: %s\n\n", result[2]);
+// 	while (*result)
+// 	{
+// 		printf("RESULT: %s\n\n", *result);
+// 		result++;
+// 	}
+// }
