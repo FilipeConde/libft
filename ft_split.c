@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/02 16:25:48 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/02 16:28:01 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,36 +34,6 @@ static int	count_elements(char const *s, char c)
 	}
 	return (index);
 }
-
-// static unsigned int	check_delimiter(char const *s, char c)
-// {
-// 	unsigned int	index;
-
-// 	index = 0;
-// 	while (*s != c && *s != '\0')
-// 	{
-// 		if (*s == c)
-// 			return (index);
-// 		index++;
-// 		s++;
-// 	}
-// 	return (index);
-// }
-
-// static unsigned int	get_next_valid_index(char const *s, char c)
-// {
-// 	unsigned int	index;
-
-// 	index = 0;
-// 	while (*s != '\0')
-// 	{
-// 		if (*s == c)
-// 			return (index);
-// 		index++;
-// 		s++;
-// 	}
-// 	return (index);
-// }
 
 char	**ft_split(char const *s, char c)
 {
