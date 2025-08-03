@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/03 14:53:01 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/03 16:00:38 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
