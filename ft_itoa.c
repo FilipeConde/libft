@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 19:17:02 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/03 14:27:36 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/03 14:45:50 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,5 @@ char	*ft_itoa(int n)
 		result[len] = (n % 10) + '0';
 		n /= 10;
 	}
-
 	return (result);
 }
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	int num = -2147483648;
-// 	char *str1 = ft_itoa(num);
-// 	printf("%s\n", str1);
-// 	free(str1);
-// 	return (0);
-// }
