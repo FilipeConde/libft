@@ -6,13 +6,11 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:26:08 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/31 21:24:51 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 20:01:34 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
