@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 14:51:48 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/03 15:55:28 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 18:50:37 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int 	size_s;
+	int		size_s;
 	char	*result;
 	int		i;
-	
+
 	if (!s || !f)
 		return (NULL);
 	size_s = ft_strlen(s);
