@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 19:17:02 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/03 14:45:50 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:59:55 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ char	*ft_itoa(int n)
 	char	*result;
 	int		len;
 
+	if (n == -2147483648)
+    {
+        result = ft_calloc(12, sizeof(char));
+        if (!result)
+            return (NULL);
+        ft_memcpy(result, "-2147483648", 12);
+        return (result);
+    }
 	len = ft_numlen(n);
 	result = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!result)
