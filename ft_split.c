@@ -6,13 +6,13 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/04 23:05:52 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:38:10 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-#include <stdio.h>
+// #include <stdio.h>
 
 static int	count_words(char const *s, char c)
 {
