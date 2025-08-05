@@ -6,14 +6,12 @@
 #    By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 19:20:11 by fconde-p          #+#    #+#              #
-#    Updated: 2025/08/05 17:53:15 by fconde-p         ###   ########.fr        #
+#    Updated: 2025/08/05 18:27:09 by fconde-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#nome
 NAME = libft.a
 
-# SRCS = $(wildcard *.c)
 SRCS = ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isprint.c \
@@ -54,16 +52,11 @@ OBJ = $(SRCS:.c=.o)
 CC = gcc
 CFLAGS = -Wextra -Werror -Wall
 
-# execução padrão, depende da existência e atualização de libft.a
 all: $(NAME)
 
-# constrói biblioteca libft.a
-# $@ para alvo NAME, $^ para dependências OBJ
 $(NAME): $(OBJ)
-# 	ar rcs $? -o 
 	ar rcs $@ $^
 
-# gera arquivos .o
 %.o: %.c
 	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
