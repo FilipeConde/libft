@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 19:17:29 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/07/27 20:09:10 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:50:03 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = (void *)malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_memset(ptr, 0, size);
+	ft_memset(ptr, 0, size * nmemb);
 	return (ptr);
 }
