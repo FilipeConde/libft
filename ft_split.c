@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/05 17:42:51 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/05 18:13:50 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,23 @@
 
 static int	count_words(char const *s, char c)
 {
-	int	index;
+	int	qty;
 
-	index = 0;
+	qty = 0;
 	if (!*s)
 		return (0);
 	while (*s)
 	{
 		if (*s == c)
-		{
-			while (*s == c)
 			s++;
-		}
 		else
 		{
-			index++;
+			qty++;
 			while (*s != c && *s != '\0')
 				s++;
 		}
 	}
-	return (index);
+	return (qty);
 }
 
 static int	check_free_all(char **s, size_t j)
@@ -42,7 +39,7 @@ static int	check_free_all(char **s, size_t j)
 	{
 		while (j > 0)
 		{
-			free(s[j - 0]);
+			free(s[j]);
 			j--;
 		}
 		free(s);
