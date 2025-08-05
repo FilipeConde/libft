@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/04 21:29:53 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:05:52 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,95 +18,86 @@ static int	count_words(char const *s, char c)
 {
 	int	index;
 
-	index = 1;
+	index = 0;
 	if (!*s)
 		return (0);
 	while (*s)
 	{
 		if (*s == c)
 		{
-			index++;
 			while (*s == c)
-				s++;
+			s++;
 		}
 		else
-			s++;
+		{
+			index++;
+			while (*s != c && *s != '\0')
+				s++;
+		}
 	}
 	return (index);
 }
 
-// static void	free_all(char **s)
-// {
-
-// }
+static void	*free_all(char **s, size_t j)
+{
+	
+	while (j > 0)
+	{
+		free(s[j - 0]);
+		j--;
+	}
+	free(s);
+	return (NULL);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char			**splited_s;
-	unsigned int	start_i;
+	size_t			start_i;
 	size_t			i;
-	int				j;
-	char			*ptr_s;
+	size_t			j;
 
-	ptr_s = ft_strtrim(s, &c);
-	if (!ptr_s)
-		return (NULL);
-	splited_s = ft_calloc((count_words(ptr_s, c) + 1), sizeof(char *));
+	splited_s = ft_calloc((count_words(s, c) + 1), sizeof(char *));
 	if (!splited_s)
-	{
-		free(ptr_s);
 		return (NULL);
-	}
 	i = 0;
 	j = 0;
 	start_i = 0;
 	
-	while (i < ft_strlen(ptr_s))
+	// walks through s until end of string
+	while (s[i] != '\0' && j < count_words(s, c))
 	{
-		if (ptr_s[i] == c && j < count_words(ptr_s, c))
+		// if different than delimiter
+		if (s[i] != c)
 		{
-			splited_s[j] = ft_substr(ptr_s, start_i, i - start_i);
+			// start of new word
+			start_i = i;
+			// until next delimiter counts word's chars
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			// write element
+			splited_s[j] = ft_substr(s, start_i, i - start_i);
+			// if fail, clean all slots and return NULL
 			if (!splited_s[j])
 			{
-				while (j >= 0)
-				{
-					free(splited_s[j]);
-					j--;
-				}
-				free(ptr_s);
-				free(splited_s);
+				free_all(splited_s, j);
 				return (NULL);
 			}
-			while (ptr_s[i] == c)
-				i++;
-			start_i = i;
+			// jumps to next slot
 			j++;
 		}
-		i++;
-		if (ptr_s[i] == '\0')
-		{
-			splited_s[j] = ft_substr(ptr_s, start_i, i - start_i);
-			if (!splited_s[j])
-			{
-				while (j >= 0)
-				{
-					free(splited_s[j]);
-					j--;
-				}
-				free(ptr_s);
-				free(splited_s);
-				return (NULL);
-			}
-		}
+		// jumpt to next word start
+		while (s[i] == c)
+			i++;
 	}
-	splited_s[j + 1] = NULL;
-	free(ptr_s);
+	
+	splited_s[j] = NULL;
 	return (splited_s);
 }
 
 // int	main(void)
 // {
-// 	char	s[] = "-----teste--abc--123--";
+// 	char	s[] = "--teste--abc--123--";
 // 	char	**result;
 
 // 	result = ft_split(s, '-');
