@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:56:46 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/04 23:38:10 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/04 23:42:32 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	char			**splited_s;
 	size_t			start_i;
 	size_t			i;
-	size_t			j;
+	int				j;
 
 	splited_s = ft_calloc((count_words(s, c) + 1), sizeof(char *));
 	if (!splited_s)
@@ -63,34 +63,24 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	start_i = 0;
-	
-	// walks through s until end of string
 	while (s[i] != '\0' && j < count_words(s, c))
 	{
-		// if different than delimiter
-		if (s[i] != c)
-		{
-			// start of new word
+			// start_i = i;
+			while (s[i] == c && s[i] != '\0')
+				i++;
 			start_i = i;
-			// until next delimiter counts word's chars
 			while (s[i] != c && s[i] != '\0')
 				i++;
-			// write element
 			splited_s[j] = ft_substr(s, start_i, i - start_i);
-			// if fail, clean all slots and return NULL
 			if (!splited_s[j])
 			{
 				free_all(splited_s, j);
 				return (NULL);
 			}
-			// jumps to next slot
 			j++;
-		}
-		// jumpt to next word start
-		while (s[i] == c)
-			i++;
+		// while (s[i] == c)
+		// 	i++;
 	}
-	
 	splited_s[j] = NULL;
 	return (splited_s);
 }
