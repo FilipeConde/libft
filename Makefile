@@ -6,7 +6,7 @@
 #    By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 19:20:11 by fconde-p          #+#    #+#              #
-#    Updated: 2025/08/05 18:27:09 by fconde-p         ###   ########.fr        #
+#    Updated: 2025/08/06 19:43:50 by fconde-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,18 @@ SRCS = ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
+BONUS_SRC = ft_lstnew.c
+
 OBJ = $(SRCS:.c=.o)
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 CC = gcc
 CFLAGS = -Wextra -Werror -Wall
+
+bonus:
+	$(MAKE) OBJ="$(OBJ) $(BONUS_OBJ)" all
+
 
 all: $(NAME)
 
