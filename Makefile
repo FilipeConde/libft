@@ -6,7 +6,7 @@
 #    By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 19:20:11 by fconde-p          #+#    #+#              #
-#    Updated: 2025/08/06 19:43:50 by fconde-p         ###   ########.fr        #
+#    Updated: 2025/08/06 20:22:03 by fconde-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ OBJ = $(SRCS:.c=.o)
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wextra -Werror -Wall
 
 bonus:
@@ -69,7 +69,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $(<) -o $(@)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f libft.a
