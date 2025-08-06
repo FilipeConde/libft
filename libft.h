@@ -6,12 +6,18 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/04 23:45:15 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/06 19:23:33 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+typedef struct	s_list
+{
+	void	*content;
+	struct	s_list *next;
+}			t_list;
 
 # include <stddef.h>
 # include <stdlib.h>
