@@ -6,7 +6,7 @@
 #    By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 19:20:11 by fconde-p          #+#    #+#              #
-#    Updated: 2025/08/06 21:21:45 by fconde-p         ###   ########.fr        #
+#    Updated: 2025/08/06 21:29:52 by fconde-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ SRCS = ft_isalpha.c \
 BONUS_SRC = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
-	ft_lstlast.c
+	ft_lstlast.c \
+	ft_lstadd_back.c
 
 OBJ = $(SRCS:.c=.o)
 
