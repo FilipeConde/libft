@@ -6,22 +6,22 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:30:31 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/06 22:25:13 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/07 17:48:40 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-typedef struct	s_list
-{
-	void	*content;
-	struct	s_list *next;
-}			t_list;
-
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -36,7 +36,7 @@ int			ft_toupper(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
 void		ft_bzero(void *s, size_t n);
-void		ft_memset(void *s, int c, size_t n);
+void		*ft_memset(void *s, int c, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 char		*ft_strchr(const char *s, int c);
