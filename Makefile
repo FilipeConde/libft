@@ -6,7 +6,7 @@
 #    By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 19:20:11 by fconde-p          #+#    #+#              #
-#    Updated: 2025/08/06 21:58:46 by fconde-p         ###   ########.fr        #
+#    Updated: 2025/08/06 22:20:14 by fconde-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ BONUS_SRC = ft_lstnew.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
 	ft_lstdelone.c \
-	ft_lstclear.c
+	ft_lstclear.c \
+	ft_lstiter.c
 
 OBJ = $(SRCS:.c=.o)
 
