@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 22:25:49 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/06 22:59:45 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/06 23:07:44 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_node;
 	t_list	*mapped_lst;
-	
+
 	if (!lst || !f || !del)
 		return (NULL);
 	mapped_lst = NULL;
