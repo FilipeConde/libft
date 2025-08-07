@@ -6,7 +6,7 @@
 /*   By: fconde-p <fconde-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 21:30:07 by fconde-p          #+#    #+#             */
-/*   Updated: 2025/08/06 21:30:30 by fconde-p         ###   ########.fr       */
+/*   Updated: 2025/08/06 21:42:38 by fconde-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-
+	if (!new)
+		return;
+	if (*lst == NULL)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
